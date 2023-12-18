@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"/> -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+    crossorigin="anonymous"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--bg-color); /* Set the background color */
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 4%; /* Adjust padding for better spacing */
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    text-align: left;
+}
+
+.logo {
+    font-size: 2rem; /* Adjust the font size for the logo */
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+
+.header a {
+    color: var(--text-color);
+    text-align: right;
+    font-size: 15px;
+    
+    padding: 25px; /* Adjust padding for better spacing */
+    transition: .3s;
+}
+
+.header a:hover,
+.header a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+    
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+
+/* ... Rest of your code ... */
+
+.container {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid black;
+    height: 5%;
+    width: 100%;
+    background-color:#081b29;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1;
+}
+
+.get_weather {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed; /* Disable the cursor */
+}
+
+.btn.rounded-fill {
+    margin-left: auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+        .enter {
+            height: 30px; /* Increase the height */
+            border-radius: 8px; /* Add border radius */
+        }
+
+        /* Updated CSS for the Get Weather button */
+        .get_weather {
+            cursor: default; /* Change the cursor */
+        }
+        .header img {
+            height: 100px; /* Reduce the size of the logo */
+            width: 100px; /* Maintain the aspect ratio */
+            margin-right: 20px; /* Adjust margin-right for better spacing */
+            border-radius: 3px;
+        }
+        .aa{
+            margin-left: 70%;
+        }
+        /* Updated CSS for the header */
+
+    </style>
+</head>
+
+
+<body data-bs-theme="light">
+    
+    <div class="container">
+        <nav class="header">
+            
+                <img src="./Winter_is_Coming2.png" alt="winter_logo" srcset="">
+                <a href="./index.html" class="aa" ><b>Home</b></a>
+                <a href="#login.html"  ><b>Login</b></a>
+            
+            <button class="btn rounded-fill" onclick="myFunction()"><i class="bi bi-moon-fill"></i></button>
+        </nav>
+
+        <form method="post" action="javascript:void(0);">
+            <input type="text" name="city" class="enter" placeholder="Enter city" required>
+            <input type="submit" value="Get Weather" class="get_weather">
+        </form>
+    </div>
+
+    <div class="footer" >
+        <p>&copy; 2023 Winter is Coming</p>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    // Enable the "Get Weather" button when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".get_weather").removeAttribute("disabled");
+    });
+
+    function myFunction() {
+        var element = document.body;
+        element.dataset.bsTheme = element.dataset.bsTheme == "light" ? "dark" : "light";
+    }
+</script>
